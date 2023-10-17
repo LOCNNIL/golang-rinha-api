@@ -30,13 +30,7 @@ func GetPerson(repo *repository.Repository) func(echo.Context) error {
 			return echo.NewHTTPError(http.StatusNotFound, "Person Not Found.")
 		}
 
-		person_response := GetPersonResponse{
-			Id:        person.Id,
-			Nickname:  person.Nickname,
-			Name:      person.Name,
-			Birthdate: person.Birthdate,
-			Stack:     person.Stack,
-		}
+		person_response := NewPersonResponse(person)
 
 		return ctx.JSON(http.StatusOK, person_response)
 	}
