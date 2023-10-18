@@ -5,7 +5,6 @@ go 1.21
 require (
 	github.com/go-playground/validator v9.31.0+incompatible
 	github.com/google/uuid v1.3.0
-	github.com/joho/godotenv v1.5.1
 	github.com/labstack/echo/v4 v4.11.1
 	gorm.io/driver/postgres v1.5.2
 	gorm.io/gorm v1.25.2
