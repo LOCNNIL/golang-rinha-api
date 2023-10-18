@@ -30,12 +30,14 @@ func Migrate(database_connection *gorm.DB) {
 func GetDatabaseConnectionFromEnvVars() DatabaseConnection {
 	max_retries, err := strconv.Atoi(environment.GetEnvOrDie("POSTGRES_CONNECTION_RETRIES"))
 	if err != nil {
-		panic(err.Error())
+		msg := fmt.Sprintf("Error converting POSTGRES_CONNECTION_RETIRES: %s", err.Error())
+		panic(msg)
 	}
 
 	interval, err := strconv.Atoi(environment.GetEnvOrDie("POSTGRES_RETRIES_INTERVAL"))
 	if err != nil {
-		panic(err.Error())
+		msg := fmt.Sprintf("Error converting POSTGRES_RETRIES_INTERVAL: %s", err.Error())
+		panic(msg)
 	}
 
 	return DatabaseConnection{
