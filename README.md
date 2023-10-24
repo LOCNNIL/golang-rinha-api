@@ -78,3 +78,13 @@ docker compose down --volumes
 Please make sure to only run this command in this project's directory as it is a
 destructive operation that irreversibly deletes all volumes specified in the
 `docker-compose` configuration.
+
+---------------
+
+### Stress test with gatling
+
+As part of the rules of the [Rinha de Backend](https://github.com/zanfranceschi/rinha-de-backend-2023-q3/tree/main) a stress test will be done on the API endpoints:
+
+- `POST /pessoas`
+- `GET /pessoas/[:id]`
+- `GET /pessoas?t=[:termo da busca]`

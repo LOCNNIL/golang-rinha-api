@@ -44,6 +44,15 @@ services:
     depends_on:
       - db
 
+  portainer:
+    image: portainer/portainer
+    container_name: portainer
+    restart: always
+    ports:
+      - 9000:9000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
   api1:
     image: lincolnwallace/rinha-golang-locnnil:latest
     container_name: api1
